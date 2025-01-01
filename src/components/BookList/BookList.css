@@ -1,0 +1,132 @@
+:root {
+  --primary-color: #5c67d3; /* Primary color for highlights */
+  --secondary-color: #7d7d7d; /* Secondary color for subtle text */
+  --white-color: #ffffff; /* Clean white background */
+  --shadow-light: rgba(0, 0, 0, 0.1) 0px 8px 20px 0px; /* Subtle shadow */
+  --shadow-dark: rgba(0, 0, 0, 0.2) 0px 12px 24px 0px; /* Darker shadow for hover effects */
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth transitions */
+}
+
+.booklist, .book-details {
+  padding: 4rem 0;
+  background-color: #f4f5f7; /* Light gray for modern aesthetics */
+}
+
+.booklist-content {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0 1.5rem;
+}
+
+.book-item {
+  padding: 2.5rem;
+  border-radius: 16px;
+  background-color: var(--white-color);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  text-align: center;
+}
+
+.book-item:hover {
+  box-shadow: var(--shadow-dark);
+  transform: translateY(-8px) scale(1.05); /* Slight lift on hover */
+}
+
+.book-item-img img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+.book-item:hover .book-item-img img {
+  transform: scale(1.08); /* Subtle zoom effect */
+}
+
+.book-item-info {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.book-item-info-item.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1.2rem;
+  text-transform: capitalize; /* Modern styling */
+}
+
+.book-item-info-item.author {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--secondary-color);
+  margin-bottom: 0.8rem;
+}
+
+.book-item-info-item {
+  font-size: 1.2rem;
+  color: #555; /* Neutral text color */
+  line-height: 1.6; /* Improved readability */
+}
+
+.book-item-info-item:not(.title) span:last-child {
+  opacity: 0.85;
+}
+
+.book-item-info-item.publish-year {
+  opacity: 0.75;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.book-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bookTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.bookAuthor {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+@media screen and (min-width: 600px) {
+  .booklist-content {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .booklist-content {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .book-item-img img {
+      max-width: 200px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .booklist-content {
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+  .book-item-img img {
+      max-width: 180px;
+  }
+}
