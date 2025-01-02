@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logoImg from "../../images/logo.png";
 import {HiOutlineMenuAlt3} from "react-icons/hi";
-import SearchForm from "../../components/SearchForm/SearchForm";
+// import SearchForm from "../../components/SearchForm/SearchForm";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -28,9 +28,9 @@ const Navbar = () => {
             <li className='nav-item'>
               <Link to = "book" className='nav-link text-white fs-22 fw-6 ls-1'>Home</Link>
             </li>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link to = "about" className='nav-link text-white fs-22 fw-6 ls-1'>About</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
